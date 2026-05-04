@@ -116,7 +116,8 @@
             <h1>Kodogram Gizlilik Politikası</h1>
             <p>
                 Bu Gizlilik Politikası, Kodogram uygulamasını kullanan kişilere ait verilerin hangi kapsamda toplandığını,
-                hangi amaçlarla işlendiğini, hangi üçüncü taraf servislerle saklandığını ve kullanıcıların veri haklarını açıklar.
+                hangi amaçlarla işlendiğini, hangi üçüncü taraf servislerle saklandığını, kimlerle paylaşılabileceğini
+                ve kullanıcıların veri haklarını açıklar.
             </p>
             <div class="meta">
                 Son güncelleme: 22 Mart 2026<br />
@@ -126,20 +127,25 @@
 
         <section class="section">
             <h2>1. Toplanan Veriler</h2>
-            <p>Kodogram, hizmetlerini sunabilmek ve güvenliği sağlayabilmek amacıyla aşağıdaki verileri toplayabilir:</p>
+            <p>Kodogram, hizmetlerini sunabilmek, güvenliği sağlayabilmek ve topluluk işleyişini sürdürebilmek amacıyla aşağıdaki verileri toplayabilir:</p>
             <ul>
                 <li>E-posta adresi</li>
                 <li>Ad ve soyad</li>
                 <li>Kullanıcı adı</li>
                 <li>Doğum tarihi</li>
-                <li>Ülke bilgisi</li>
-                <li>Cihaz kimliği</li>
-                <li>Cihaz adı ve cihaz modeli</li>
+                <li>Hesap oluşturma ve son giriş tarihleri</li>
+                <li>Giriş sağlayıcısı bilgisi (örneğin manuel kayıt, Apple Sign-In, Google Sign-In)</li>
+                <li>Ülke ve bölge bilgisi</li>
+                <li>Cihaz kimliği, cihaz adı, cihaz modeli</li>
                 <li>İşletim sistemi adı ve sürümü</li>
-                <li>IP adresi</li>
-                <li>Bildirim tercihleri</li>
-                <li>Uygulama içi öğrenme ilerlemesi, başarılar, seri bilgileri ve etkileşim kayıtları</li>
-                <li>Forum içerikleri, paylaşılan kodlar, beğeniler, raporlar ve moderasyon kayıtları</li>
+                <li>IP adresi ve bağlantı kaynaklı teknik bilgiler</li>
+                <li>Push bildirim belirteci (FCM token), bildirim tercihleri ve bildirimle ilgili ayarlar</li>
+                <li>Uygulama içi öğrenme ilerlemesi, seri bilgileri, quiz ve ders tamamlama verileri</li>
+                <li>Forum içerikleri, paylaşılan kodlar, yorumlar, beğeniler ve etkileşim kayıtları</li>
+                <li>Kullanıcı raporları, destek talepleri ve destek yazışmaları</li>
+                <li>Moderasyon, ban geçmişi, yönetici işlem kayıtları ve güvenlik logları</li>
+                <li>Takip / takipçi ilişkileri ve ilgili istek kayıtları</li>
+                <li>Gizlilik onayı durumu, onay tarihi ve sözleşme sürümü bilgisi</li>
             </ul>
         </section>
 
@@ -148,12 +154,16 @@
             <p>Toplanan veriler aşağıdaki amaçlarla kullanılabilir:</p>
             <ul>
                 <li>Hesap oluşturma, oturum açma ve kimlik doğrulama işlemlerini yürütmek</li>
+                <li>Kullanıcı profili, kullanıcı adı ve hesap ayarlarını yönetmek</li>
                 <li>Kullanıcı deneyimini kişiselleştirmek ve uygulama işlevlerini sunmak</li>
-                <li>Hesap güvenliği, dolandırıcılık önleme ve kötüye kullanım tespiti sağlamak</li>
-                <li>Forum, paylaşım ve moderasyon sistemlerini yönetmek</li>
-                <li>Öğrenme ilerlemesini ve kullanıcı etkinliklerini takip etmek</li>
-                <li>Bildirim, duyuru ve hizmet mesajları iletmek</li>
-                <li>Teknik sorunları analiz etmek, hizmet kalitesini geliştirmek ve yasal yükümlülükleri yerine getirmek</li>
+                <li>Hesap güvenliği, dolandırıcılık önleme, sahteciliği azaltma ve kötüye kullanım tespiti sağlamak</li>
+                <li>Forum, paylaşım, öğrenme ve moderasyon sistemlerini işletmek</li>
+                <li>Öğrenme ilerlemesini, başarıları ve kullanıcı etkinliklerini takip etmek</li>
+                <li>Uygulama içi bildirimler, cihaz bildirimleri, duyurular ve hizmet mesajları iletmek</li>
+                <li>Destek taleplerini yanıtlamak, kullanıcı raporlarını incelemek ve topluluk güvenliğini korumak</li>
+                <li>Teknik sorunları analiz etmek, hizmet kalitesini geliştirmek ve performans iyileştirmeleri yapmak</li>
+                <li>Yasal yükümlülükleri yerine getirmek, uyuşmazlıkları çözmek ve idari kayıtları tutmak</li>
+                <li>Doğum tarihi gibi verileri yaş uygunluğu, hesap bütünlüğü ve profil tamamlama süreçlerinde kullanmak</li>
             </ul>
         </section>
 
@@ -176,7 +186,8 @@
             <h2>4. Verilerin Saklanması</h2>
             <p>
                 Kullanıcı verileri başta <strong>Google Firebase</strong> servisleri olmak üzere, uygulamanın çalışması için kullanılan
-                teknik altyapılarda saklanabilir ve işlenebilir. Bu kapsamda Firebase Authentication, Cloud Firestore ve ilgili Google altyapıları kullanılabilir.
+                teknik altyapılarda saklanabilir ve işlenebilir. Bu kapsamda Firebase Authentication, Cloud Firestore,
+                Cloud Functions, Firebase Cloud Messaging ve ilgili Google altyapıları kullanılabilir.
             </p>
             <p>
                 Kodogram, yetkisiz erişimi, veri kaybını ve kötüye kullanımı azaltmak amacıyla makul teknik ve idari önlemler uygulamayı hedefler.
@@ -190,38 +201,58 @@
             <ul>
                 <li>Hizmetin teknik olarak yürütülmesi için gerekli altyapı ve servis sağlayıcılarla</li>
                 <li>Yasal zorunluluk, resmi makam talebi veya hukuki yükümlülük halinde</li>
-                <li>Dolandırıcılık, güvenlik ihlali veya kötüye kullanım incelemelerinde</li>
+                <li>Dolandırıcılık, güvenlik ihlali, spam, kötüye kullanım veya moderasyon incelemelerinde</li>
                 <li>Kullanıcının açık onayı bulunduğunda</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>6. Yönetici Erişimi</h2>
+            <h2>6. Veri Görünürlüğü ve Erişim</h2>
             <p>
-                Kodogram yönetim paneli üzerinden yetkili yöneticiler; kullanıcı hesabı, e-posta, ad soyad,
-                ülke, cihaz bilgileri, IP bilgisi, paylaşım geçmişi, forum içerikleri, raporlar ve moderasyon kayıtları gibi verilere erişebilir.
-                Bu erişim yalnızca uygulama yönetimi, güvenlik, destek ve moderasyon amaçlarıyla sınırlıdır.
+                Kodogram içinde bazı profil bilgileri, içerikler ve topluluk verileri diğer kullanıcılar tarafından görülebilir.
+                Buna kullanıcı adı, paylaşılan içerikler, forum başlıkları, yorumlar ve kullanıcının platform içinde görünür hale getirdiği diğer bilgiler dahil olabilir.
+            </p>
+            <p>
+                E-posta adresi, cihaz bilgileri, IP bilgisi, güvenlik kayıtları, bildirim belirteçleri ve benzeri hassas teknik veriler normal şartlarda kamuya açık değildir.
+                Bu tür veriler yalnızca hesabın sahibi, yetkili sistem bileşenleri veya gerekli durumlarda yetkili yöneticiler tarafından erişilebilir olabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>7. Bildirimler</h2>
+            <h2>7. Yönetici Erişimi</h2>
+            <p>
+                Kodogram yönetim paneli üzerinden yetkili yöneticiler; kullanıcı hesabı, e-posta, ad soyad,
+                ülke, cihaz bilgileri, IP bilgisi, paylaşım geçmişi, forum içerikleri, raporlar, destek talepleri,
+                moderasyon kayıtları, ban geçmişi ve idari loglar gibi verilere erişebilir.
+                Bu erişim yalnızca uygulama yönetimi, güvenlik, destek, kötüye kullanım önleme ve moderasyon amaçlarıyla sınırlıdır.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>8. Bildirimler</h2>
             <p>
                 Kodogram, kullanıcı tercihlerine bağlı olarak uygulama içi veya cihaz bildirimi gönderebilir.
+                Bu amaçla push bildirim belirteçleri, bildirim tercihleri ve bildirim teslimi için gerekli teknik veriler işlenebilir.
+            </p>
+            <p>
                 Kullanıcılar bildirim izinlerini cihaz ayarları veya uygulama ayarları üzerinden yönetebilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>8. Çocukların Gizliliği</h2>
+            <h2>9. Çocukların Gizliliği</h2>
             <p>
                 Kodogram, yürürlükteki yerel mevzuata aykırı şekilde çocuklardan bilerek veri toplamayı hedeflemez.
-                Gerekli görülen durumlarda yaş doğrulama, hesap kısıtlaması veya içerik erişim sınırlamaları uygulanabilir.
+                Gerekli görülen durumlarda yaş doğrulama, hesap kısıtlaması, içerik erişim sınırlamaları veya hesap incelemesi uygulanabilir.
+            </p>
+            <p>
+                Kullanıcı tarafından sağlanan doğum tarihi, yaş uygunluğunu değerlendirmek, platform güvenliğini desteklemek
+                ve belirli hesap akışlarını doğrulamak amacıyla kullanılabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>9. Kullanıcı Hakları</h2>
+            <h2>10. Kullanıcı Hakları</h2>
             <p>Kullanıcılar, yürürlükteki hukuka bağlı olarak aşağıdaki haklara sahip olabilir:</p>
             <ul>
                 <li>Hangi verilerin işlendiğini öğrenme</li>
@@ -236,15 +267,19 @@
         </section>
 
         <section class="section">
-            <h2>10. Veri Saklama Süresi</h2>
+            <h2>11. Veri Saklama Süresi</h2>
             <p>
                 Veriler; hesabın aktif kaldığı süre boyunca veya hizmetin sunulması, güvenlik, yasal yükümlülükler,
                 uyuşmazlık çözümü ve meşru idari gereklilikler için gerekli olduğu ölçüde saklanabilir.
             </p>
+            <p>
+                Bazı kayıtlar; destek talepleri, güvenlik logları, moderasyon geçmişi, raporlar, ban kayıtları veya
+                idari işlem geçmişi gibi nedenlerle hesap silinse dahi belirli bir süre daha saklanabilir.
+            </p>
         </section>
 
         <section class="section">
-            <h2>11. Gizlilik Politikasındaki Değişiklikler</h2>
+            <h2>12. Gizlilik Politikasındaki Değişiklikler</h2>
             <p>
                 Kodogram bu politikayı zaman zaman güncelleyebilir. Önemli değişiklikler uygulama içinde, ilgili ekranda
                 veya gerekli görüldüğünde yeniden onay süreciyle kullanıcılara bildirilebilir.
@@ -252,7 +287,7 @@
         </section>
 
         <section class="section">
-            <h2>12. İletişim</h2>
+            <h2>13. İletişim</h2>
             <p>
                 Gizlilik politikası, veri işleme faaliyetleri, hesap silme talepleri veya kullanıcı verileriyle ilgili başvurularınız için bizimle şu e-posta adresi üzerinden iletişime geçebilirsiniz:
             </p>
@@ -262,13 +297,16 @@
         </section>
 
         <section class="section">
-            <h2>13. Üçüncü Taraf Servisler</h2>
+            <h2>14. Üçüncü Taraf Servisler</h2>
             <p>Kodogram, hizmetin sunulması sırasında aşağıdaki üçüncü taraf servislerden yararlanabilir:</p>
             <ul>
                 <li><strong>Google Firebase Authentication</strong> - kullanıcı kimlik doğrulama ve oturum yönetimi</li>
                 <li><strong>Google Cloud Firestore / Firebase Firestore</strong> - uygulama verilerinin saklanması</li>
+                <li><strong>Firebase Cloud Messaging</strong> - cihaz bildirimlerinin iletilmesi</li>
+                <li><strong>Firebase Cloud Functions</strong> - belirli sunucu tarafı otomasyon ve bildirim işlemleri</li>
                 <li><strong>Apple Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
                 <li><strong>Google Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
+                <li><strong>ipify veya benzeri IP çözümleme servisi</strong> - genel IP adresinin elde edilmesi gerektiği durumlarda</li>
             </ul>
             <p>
                 Bu servisler kendi gizlilik politikalarına göre de veri işleyebilir. Kullanıcılar ilgili servislerin güncel politikalarını ayrıca incelemelidir.
