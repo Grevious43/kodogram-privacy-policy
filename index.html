@@ -42,6 +42,15 @@
             margin-bottom: 24px;
         }
 
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
         .badge {
             display: inline-block;
             background: var(--accent-soft);
@@ -50,7 +59,42 @@
             padding: 6px 12px;
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 14px;
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8faff;
+            border: 1px solid var(--line);
+            padding: 8px;
+            border-radius: 14px;
+        }
+
+        .lang-btn {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(20, 31, 56, 0.08);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
         }
 
         h1, h2, h3 {
@@ -107,120 +151,156 @@
             font-size: 14px;
             color: var(--muted);
         }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .hero-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .lang-switch {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
     <main class="wrap">
         <section class="hero">
-            <div class="badge">Kodogram Privacy Policy</div>
-            <h1>Kodogram Gizlilik Politikası</h1>
-            <p>
+            <div class="hero-top">
+                <div class="badge" data-i18n="badge">Kodogram Privacy Policy</div>
+
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="tr">
+                        <span>🇹🇷</span>
+                        <span>Türkçe</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <span>🇬🇧</span>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+
+            <h1 data-i18n="hero_title">Kodogram Gizlilik Politikası</h1>
+            <p data-i18n="hero_desc">
                 Bu Gizlilik Politikası, Kodogram uygulamasını kullanan kişilere ait verilerin hangi kapsamda toplandığını,
                 hangi amaçlarla işlendiğini, hangi üçüncü taraf servislerle saklandığını, kimlerle paylaşılabileceğini
                 ve kullanıcıların veri haklarını açıklar.
             </p>
             <div class="meta">
-                Son güncelleme: 22 Mart 2026<br />
-                Sürüm: 2026.03
+                <span data-i18n="meta_update">Son güncelleme: 22 Mart 2026</span><br />
+                <span data-i18n="meta_version">Sürüm: 2026.03</span>
             </div>
         </section>
 
         <section class="section">
-            <h2>1. Toplanan Veriler</h2>
-            <p>Kodogram, hizmetlerini sunabilmek, güvenliği sağlayabilmek ve topluluk işleyişini sürdürebilmek amacıyla aşağıdaki verileri toplayabilir:</p>
+            <h2 data-i18n="s1_title">1. Toplanan Veriler</h2>
+            <p data-i18n="s1_desc">
+                Kodogram, hizmetlerini sunabilmek, güvenliği sağlayabilmek ve topluluk işleyişini sürdürebilmek amacıyla aşağıdaki verileri toplayabilir:
+            </p>
             <ul>
-                <li>E-posta adresi</li>
-                <li>Ad ve soyad</li>
-                <li>Kullanıcı adı</li>
-                <li>Doğum tarihi</li>
-                <li>Hesap oluşturma ve son giriş tarihleri</li>
-                <li>Giriş sağlayıcısı bilgisi (örneğin manuel kayıt, Apple Sign-In, Google Sign-In)</li>
-                <li>Ülke ve bölge bilgisi</li>
-                <li>Cihaz kimliği, cihaz adı, cihaz modeli</li>
-                <li>İşletim sistemi adı ve sürümü</li>
-                <li>IP adresi ve bağlantı kaynaklı teknik bilgiler</li>
-                <li>Push bildirim belirteci (FCM token), bildirim tercihleri ve bildirimle ilgili ayarlar</li>
-                <li>Uygulama içi öğrenme ilerlemesi, seri bilgileri, quiz ve ders tamamlama verileri</li>
-                <li>Forum içerikleri, paylaşılan kodlar, yorumlar, beğeniler ve etkileşim kayıtları</li>
-                <li>Kullanıcı raporları, destek talepleri ve destek yazışmaları</li>
-                <li>Moderasyon, ban geçmişi, yönetici işlem kayıtları ve güvenlik logları</li>
-                <li>Takip / takipçi ilişkileri ve ilgili istek kayıtları</li>
-                <li>Gizlilik onayı durumu, onay tarihi ve sözleşme sürümü bilgisi</li>
+                <li data-i18n="s1_li1">E-posta adresi</li>
+                <li data-i18n="s1_li2">Ad ve soyad</li>
+                <li data-i18n="s1_li3">Kullanıcı adı</li>
+                <li data-i18n="s1_li4">Doğum tarihi</li>
+                <li data-i18n="s1_li5">Hesap oluşturma ve son giriş tarihleri</li>
+                <li data-i18n="s1_li6">Giriş sağlayıcısı bilgisi (örneğin manuel kayıt, Apple Sign-In, Google Sign-In)</li>
+                <li data-i18n="s1_li7">Ülke ve bölge bilgisi</li>
+                <li data-i18n="s1_li8">Cihaz kimliği, cihaz adı, cihaz modeli</li>
+                <li data-i18n="s1_li9">İşletim sistemi adı ve sürümü</li>
+                <li data-i18n="s1_li10">IP adresi ve bağlantı kaynaklı teknik bilgiler</li>
+                <li data-i18n="s1_li11">Push bildirim belirteci (FCM token), bildirim tercihleri ve bildirimle ilgili ayarlar</li>
+                <li data-i18n="s1_li12">Uygulama içi öğrenme ilerlemesi, seri bilgileri, quiz ve ders tamamlama verileri</li>
+                <li data-i18n="s1_li13">Forum içerikleri, paylaşılan kodlar, yorumlar, beğeniler ve etkileşim kayıtları</li>
+                <li data-i18n="s1_li14">Kullanıcı raporları, destek talepleri ve destek yazışmaları</li>
+                <li data-i18n="s1_li15">Moderasyon, ban geçmişi, yönetici işlem kayıtları ve güvenlik logları</li>
+                <li data-i18n="s1_li16">Takip / takipçi ilişkileri ve ilgili istek kayıtları</li>
+                <li data-i18n="s1_li17">Gizlilik onayı durumu, onay tarihi ve sözleşme sürümü bilgisi</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>2. Verilerin Toplanma Amaçları</h2>
-            <p>Toplanan veriler aşağıdaki amaçlarla kullanılabilir:</p>
+            <h2 data-i18n="s2_title">2. Verilerin Toplanma Amaçları</h2>
+            <p data-i18n="s2_desc">Toplanan veriler aşağıdaki amaçlarla kullanılabilir:</p>
             <ul>
-                <li>Hesap oluşturma, oturum açma ve kimlik doğrulama işlemlerini yürütmek</li>
-                <li>Kullanıcı profili, kullanıcı adı ve hesap ayarlarını yönetmek</li>
-                <li>Kullanıcı deneyimini kişiselleştirmek ve uygulama işlevlerini sunmak</li>
-                <li>Hesap güvenliği, dolandırıcılık önleme, sahteciliği azaltma ve kötüye kullanım tespiti sağlamak</li>
-                <li>Forum, paylaşım, öğrenme ve moderasyon sistemlerini işletmek</li>
-                <li>Öğrenme ilerlemesini, başarıları ve kullanıcı etkinliklerini takip etmek</li>
-                <li>Uygulama içi bildirimler, cihaz bildirimleri, duyurular ve hizmet mesajları iletmek</li>
-                <li>Destek taleplerini yanıtlamak, kullanıcı raporlarını incelemek ve topluluk güvenliğini korumak</li>
-                <li>Teknik sorunları analiz etmek, hizmet kalitesini geliştirmek ve performans iyileştirmeleri yapmak</li>
-                <li>Yasal yükümlülükleri yerine getirmek, uyuşmazlıkları çözmek ve idari kayıtları tutmak</li>
-                <li>Doğum tarihi gibi verileri yaş uygunluğu, hesap bütünlüğü ve profil tamamlama süreçlerinde kullanmak</li>
+                <li data-i18n="s2_li1">Hesap oluşturma, oturum açma ve kimlik doğrulama işlemlerini yürütmek</li>
+                <li data-i18n="s2_li2">Kullanıcı profili, kullanıcı adı ve hesap ayarlarını yönetmek</li>
+                <li data-i18n="s2_li3">Kullanıcı deneyimini kişiselleştirmek ve uygulama işlevlerini sunmak</li>
+                <li data-i18n="s2_li4">Hesap güvenliği, dolandırıcılık önleme, sahteciliği azaltma ve kötüye kullanım tespiti sağlamak</li>
+                <li data-i18n="s2_li5">Forum, paylaşım, öğrenme ve moderasyon sistemlerini işletmek</li>
+                <li data-i18n="s2_li6">Öğrenme ilerlemesini, başarıları ve kullanıcı etkinliklerini takip etmek</li>
+                <li data-i18n="s2_li7">Uygulama içi bildirimler, cihaz bildirimleri, duyurular ve hizmet mesajları iletmek</li>
+                <li data-i18n="s2_li8">Destek taleplerini yanıtlamak, kullanıcı raporlarını incelemek ve topluluk güvenliğini korumak</li>
+                <li data-i18n="s2_li9">Teknik sorunları analiz etmek, hizmet kalitesini geliştirmek ve performans iyileştirmeleri yapmak</li>
+                <li data-i18n="s2_li10">Yasal yükümlülükleri yerine getirmek, uyuşmazlıkları çözmek ve idari kayıtları tutmak</li>
+                <li data-i18n="s2_li11">Doğum tarihi gibi verileri yaş uygunluğu, hesap bütünlüğü ve profil tamamlama süreçlerinde kullanmak</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>3. Hukuki Dayanak ve Onay</h2>
-            <p>
+            <h2 data-i18n="s3_title">3. Hukuki Dayanak ve Onay</h2>
+            <p data-i18n="s3_p1">
                 Kodogram’a kayıt olan kullanıcılar, hesap oluşturma sırasında sunulan gizlilik politikası ve ilgili kullanım koşullarını
                 açık şekilde kabul ederek verilerinin bu politika kapsamında işlenmesine onay vermiş olur.
             </p>
-            <p>
+            <p data-i18n="s3_p2">
                 Giriş yapan kullanıcılar, hizmeti kullanmaya devam ederek yürürlükteki gizlilik politikası ve kullanım koşullarına tabi olur.
                 Gizlilik politikası veya veri işleme kapsamı önemli ölçüde değişirse kullanıcılardan yeniden onay istenebilir.
             </p>
-            <p>
+            <p data-i18n="s3_p3">
                 Sistem üzerinde gizlilik onayı durumu, onay tarihi ve sözleşme sürümü kayıt altına alınabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>4. Verilerin Saklanması</h2>
-            <p>
+            <h2 data-i18n="s4_title">4. Verilerin Saklanması</h2>
+            <p data-i18n="s4_p1">
                 Kullanıcı verileri başta <strong>Google Firebase</strong> servisleri olmak üzere, uygulamanın çalışması için kullanılan
                 teknik altyapılarda saklanabilir ve işlenebilir. Bu kapsamda Firebase Authentication, Cloud Firestore,
                 Cloud Functions, Firebase Cloud Messaging ve ilgili Google altyapıları kullanılabilir.
             </p>
-            <p>
+            <p data-i18n="s4_p2">
                 Kodogram, yetkisiz erişimi, veri kaybını ve kötüye kullanımı azaltmak amacıyla makul teknik ve idari önlemler uygulamayı hedefler.
                 Bununla birlikte hiçbir dijital sistem mutlak güvenlik garantisi sunmaz.
             </p>
         </section>
 
         <section class="section">
-            <h2>5. Verilerin Paylaşılması</h2>
-            <p>Kodogram, kişisel verileri aşağıdaki durumlar dışında üçüncü kişilere satmaz:</p>
+            <h2 data-i18n="s5_title">5. Verilerin Paylaşılması</h2>
+            <p data-i18n="s5_desc">Kodogram, kişisel verileri aşağıdaki durumlar dışında üçüncü kişilere satmaz:</p>
             <ul>
-                <li>Hizmetin teknik olarak yürütülmesi için gerekli altyapı ve servis sağlayıcılarla</li>
-                <li>Yasal zorunluluk, resmi makam talebi veya hukuki yükümlülük halinde</li>
-                <li>Dolandırıcılık, güvenlik ihlali, spam, kötüye kullanım veya moderasyon incelemelerinde</li>
-                <li>Kullanıcının açık onayı bulunduğunda</li>
+                <li data-i18n="s5_li1">Hizmetin teknik olarak yürütülmesi için gerekli altyapı ve servis sağlayıcılarla</li>
+                <li data-i18n="s5_li2">Yasal zorunluluk, resmi makam talebi veya hukuki yükümlülük halinde</li>
+                <li data-i18n="s5_li3">Dolandırıcılık, güvenlik ihlali, spam, kötüye kullanım veya moderasyon incelemelerinde</li>
+                <li data-i18n="s5_li4">Kullanıcının açık onayı bulunduğunda</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>6. Veri Görünürlüğü ve Erişim</h2>
-            <p>
+            <h2 data-i18n="s6_title">6. Veri Görünürlüğü ve Erişim</h2>
+            <p data-i18n="s6_p1">
                 Kodogram içinde bazı profil bilgileri, içerikler ve topluluk verileri diğer kullanıcılar tarafından görülebilir.
                 Buna kullanıcı adı, paylaşılan içerikler, forum başlıkları, yorumlar ve kullanıcının platform içinde görünür hale getirdiği diğer bilgiler dahil olabilir.
             </p>
-            <p>
+            <p data-i18n="s6_p2">
                 E-posta adresi, cihaz bilgileri, IP bilgisi, güvenlik kayıtları, bildirim belirteçleri ve benzeri hassas teknik veriler normal şartlarda kamuya açık değildir.
                 Bu tür veriler yalnızca hesabın sahibi, yetkili sistem bileşenleri veya gerekli durumlarda yetkili yöneticiler tarafından erişilebilir olabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>7. Yönetici Erişimi</h2>
-            <p>
+            <h2 data-i18n="s7_title">7. Yönetici Erişimi</h2>
+            <p data-i18n="s7_p1">
                 Kodogram yönetim paneli üzerinden yetkili yöneticiler; kullanıcı hesabı, e-posta, ad soyad,
                 ülke, cihaz bilgileri, IP bilgisi, paylaşım geçmişi, forum içerikleri, raporlar, destek talepleri,
                 moderasyon kayıtları, ban geçmişi ve idari loglar gibi verilere erişebilir.
@@ -229,66 +309,66 @@
         </section>
 
         <section class="section">
-            <h2>8. Bildirimler</h2>
-            <p>
+            <h2 data-i18n="s8_title">8. Bildirimler</h2>
+            <p data-i18n="s8_p1">
                 Kodogram, kullanıcı tercihlerine bağlı olarak uygulama içi veya cihaz bildirimi gönderebilir.
                 Bu amaçla push bildirim belirteçleri, bildirim tercihleri ve bildirim teslimi için gerekli teknik veriler işlenebilir.
             </p>
-            <p>
+            <p data-i18n="s8_p2">
                 Kullanıcılar bildirim izinlerini cihaz ayarları veya uygulama ayarları üzerinden yönetebilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>9. Çocukların Gizliliği</h2>
-            <p>
+            <h2 data-i18n="s9_title">9. Çocukların Gizliliği</h2>
+            <p data-i18n="s9_p1">
                 Kodogram, yürürlükteki yerel mevzuata aykırı şekilde çocuklardan bilerek veri toplamayı hedeflemez.
                 Gerekli görülen durumlarda yaş doğrulama, hesap kısıtlaması, içerik erişim sınırlamaları veya hesap incelemesi uygulanabilir.
             </p>
-            <p>
+            <p data-i18n="s9_p2">
                 Kullanıcı tarafından sağlanan doğum tarihi, yaş uygunluğunu değerlendirmek, platform güvenliğini desteklemek
                 ve belirli hesap akışlarını doğrulamak amacıyla kullanılabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>10. Kullanıcı Hakları</h2>
-            <p>Kullanıcılar, yürürlükteki hukuka bağlı olarak aşağıdaki haklara sahip olabilir:</p>
+            <h2 data-i18n="s10_title">10. Kullanıcı Hakları</h2>
+            <p data-i18n="s10_desc">Kullanıcılar, yürürlükteki hukuka bağlı olarak aşağıdaki haklara sahip olabilir:</p>
             <ul>
-                <li>Hangi verilerin işlendiğini öğrenme</li>
-                <li>Eksik veya yanlış verilerin düzeltilmesini talep etme</li>
-                <li>Belirli koşullarda verilerin silinmesini isteme</li>
-                <li>Hesabın kapatılmasını ve ilişkili verilerin silinmesini talep etme</li>
-                <li>Belirli veri işleme faaliyetlerine itiraz etme veya bilgi talebinde bulunma</li>
+                <li data-i18n="s10_li1">Hangi verilerin işlendiğini öğrenme</li>
+                <li data-i18n="s10_li2">Eksik veya yanlış verilerin düzeltilmesini talep etme</li>
+                <li data-i18n="s10_li3">Belirli koşullarda verilerin silinmesini isteme</li>
+                <li data-i18n="s10_li4">Hesabın kapatılmasını ve ilişkili verilerin silinmesini talep etme</li>
+                <li data-i18n="s10_li5">Belirli veri işleme faaliyetlerine itiraz etme veya bilgi talebinde bulunma</li>
             </ul>
-            <p>
+            <p data-i18n="s10_p2">
                 Hesabınızın ve ilişkili verilerinizin silinmesini talep etmek için aşağıdaki iletişim adresinden bizimle iletişime geçebilirsiniz.
             </p>
         </section>
 
         <section class="section">
-            <h2>11. Veri Saklama Süresi</h2>
-            <p>
+            <h2 data-i18n="s11_title">11. Veri Saklama Süresi</h2>
+            <p data-i18n="s11_p1">
                 Veriler; hesabın aktif kaldığı süre boyunca veya hizmetin sunulması, güvenlik, yasal yükümlülükler,
                 uyuşmazlık çözümü ve meşru idari gereklilikler için gerekli olduğu ölçüde saklanabilir.
             </p>
-            <p>
+            <p data-i18n="s11_p2">
                 Bazı kayıtlar; destek talepleri, güvenlik logları, moderasyon geçmişi, raporlar, ban kayıtları veya
                 idari işlem geçmişi gibi nedenlerle hesap silinse dahi belirli bir süre daha saklanabilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>12. Gizlilik Politikasındaki Değişiklikler</h2>
-            <p>
+            <h2 data-i18n="s12_title">12. Gizlilik Politikasındaki Değişiklikler</h2>
+            <p data-i18n="s12_p1">
                 Kodogram bu politikayı zaman zaman güncelleyebilir. Önemli değişiklikler uygulama içinde, ilgili ekranda
                 veya gerekli görüldüğünde yeniden onay süreciyle kullanıcılara bildirilebilir.
             </p>
         </section>
 
         <section class="section">
-            <h2>13. İletişim</h2>
-            <p>
+            <h2 data-i18n="s13_title">13. İletişim</h2>
+            <p data-i18n="s13_p1">
                 Gizlilik politikası, veri işleme faaliyetleri, hesap silme talepleri veya kullanıcı verileriyle ilgili başvurularınız için bizimle şu e-posta adresi üzerinden iletişime geçebilirsiniz:
             </p>
             <p>
@@ -297,25 +377,267 @@
         </section>
 
         <section class="section">
-            <h2>14. Üçüncü Taraf Servisler</h2>
-            <p>Kodogram, hizmetin sunulması sırasında aşağıdaki üçüncü taraf servislerden yararlanabilir:</p>
+            <h2 data-i18n="s14_title">14. Üçüncü Taraf Servisler</h2>
+            <p data-i18n="s14_desc">Kodogram, hizmetin sunulması sırasında aşağıdaki üçüncü taraf servislerden yararlanabilir:</p>
             <ul>
-                <li><strong>Google Firebase Authentication</strong> - kullanıcı kimlik doğrulama ve oturum yönetimi</li>
-                <li><strong>Google Cloud Firestore / Firebase Firestore</strong> - uygulama verilerinin saklanması</li>
-                <li><strong>Firebase Cloud Messaging</strong> - cihaz bildirimlerinin iletilmesi</li>
-                <li><strong>Firebase Cloud Functions</strong> - belirli sunucu tarafı otomasyon ve bildirim işlemleri</li>
-                <li><strong>Apple Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
-                <li><strong>Google Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
-                <li><strong>ipify veya benzeri IP çözümleme servisi</strong> - genel IP adresinin elde edilmesi gerektiği durumlarda</li>
+                <li data-i18n="s14_li1"><strong>Google Firebase Authentication</strong> - kullanıcı kimlik doğrulama ve oturum yönetimi</li>
+                <li data-i18n="s14_li2"><strong>Google Cloud Firestore / Firebase Firestore</strong> - uygulama verilerinin saklanması</li>
+                <li data-i18n="s14_li3"><strong>Firebase Cloud Messaging</strong> - cihaz bildirimlerinin iletilmesi</li>
+                <li data-i18n="s14_li4"><strong>Firebase Cloud Functions</strong> - belirli sunucu tarafı otomasyon ve bildirim işlemleri</li>
+                <li data-i18n="s14_li5"><strong>Apple Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
+                <li data-i18n="s14_li6"><strong>Google Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde</li>
+                <li data-i18n="s14_li7"><strong>ipify veya benzeri IP çözümleme servisi</strong> - genel IP adresinin elde edilmesi gerektiği durumlarda</li>
             </ul>
-            <p>
+            <p data-i18n="s14_p2">
                 Bu servisler kendi gizlilik politikalarına göre de veri işleyebilir. Kullanıcılar ilgili servislerin güncel politikalarını ayrıca incelemelidir.
             </p>
         </section>
 
-        <p class="foot">
+        <p class="foot" data-i18n="foot">
             SS Development © 2026 Kodogram
         </p>
     </main>
+
+    <script>
+        const translations = {
+            tr: {
+                page_title: "Kodogram Gizlilik Politikası",
+                badge: "Kodogram Privacy Policy",
+                hero_title: "Kodogram Gizlilik Politikası",
+                hero_desc: "Bu Gizlilik Politikası, Kodogram uygulamasını kullanan kişilere ait verilerin hangi kapsamda toplandığını, hangi amaçlarla işlendiğini, hangi üçüncü taraf servislerle saklandığını, kimlerle paylaşılabileceğini ve kullanıcıların veri haklarını açıklar.",
+                meta_update: "Son güncelleme: 22 Mart 2026",
+                meta_version: "Sürüm: 2026.03",
+
+                s1_title: "1. Toplanan Veriler",
+                s1_desc: "Kodogram, hizmetlerini sunabilmek, güvenliği sağlayabilmek ve topluluk işleyişini sürdürebilmek amacıyla aşağıdaki verileri toplayabilir:",
+                s1_li1: "E-posta adresi",
+                s1_li2: "Ad ve soyad",
+                s1_li3: "Kullanıcı adı",
+                s1_li4: "Doğum tarihi",
+                s1_li5: "Hesap oluşturma ve son giriş tarihleri",
+                s1_li6: "Giriş sağlayıcısı bilgisi (örneğin manuel kayıt, Apple Sign-In, Google Sign-In)",
+                s1_li7: "Ülke ve bölge bilgisi",
+                s1_li8: "Cihaz kimliği, cihaz adı, cihaz modeli",
+                s1_li9: "İşletim sistemi adı ve sürümü",
+                s1_li10: "IP adresi ve bağlantı kaynaklı teknik bilgiler",
+                s1_li11: "Push bildirim belirteci (FCM token), bildirim tercihleri ve bildirimle ilgili ayarlar",
+                s1_li12: "Uygulama içi öğrenme ilerlemesi, seri bilgileri, quiz ve ders tamamlama verileri",
+                s1_li13: "Forum içerikleri, paylaşılan kodlar, yorumlar, beğeniler ve etkileşim kayıtları",
+                s1_li14: "Kullanıcı raporları, destek talepleri ve destek yazışmaları",
+                s1_li15: "Moderasyon, ban geçmişi, yönetici işlem kayıtları ve güvenlik logları",
+                s1_li16: "Takip / takipçi ilişkileri ve ilgili istek kayıtları",
+                s1_li17: "Gizlilik onayı durumu, onay tarihi ve sözleşme sürümü bilgisi",
+
+                s2_title: "2. Verilerin Toplanma Amaçları",
+                s2_desc: "Toplanan veriler aşağıdaki amaçlarla kullanılabilir:",
+                s2_li1: "Hesap oluşturma, oturum açma ve kimlik doğrulama işlemlerini yürütmek",
+                s2_li2: "Kullanıcı profili, kullanıcı adı ve hesap ayarlarını yönetmek",
+                s2_li3: "Kullanıcı deneyimini kişiselleştirmek ve uygulama işlevlerini sunmak",
+                s2_li4: "Hesap güvenliği, dolandırıcılık önleme, sahteciliği azaltma ve kötüye kullanım tespiti sağlamak",
+                s2_li5: "Forum, paylaşım, öğrenme ve moderasyon sistemlerini işletmek",
+                s2_li6: "Öğrenme ilerlemesini, başarıları ve kullanıcı etkinliklerini takip etmek",
+                s2_li7: "Uygulama içi bildirimler, cihaz bildirimleri, duyurular ve hizmet mesajları iletmek",
+                s2_li8: "Destek taleplerini yanıtlamak, kullanıcı raporlarını incelemek ve topluluk güvenliğini korumak",
+                s2_li9: "Teknik sorunları analiz etmek, hizmet kalitesini geliştirmek ve performans iyileştirmeleri yapmak",
+                s2_li10: "Yasal yükümlülükleri yerine getirmek, uyuşmazlıkları çözmek ve idari kayıtları tutmak",
+                s2_li11: "Doğum tarihi gibi verileri yaş uygunluğu, hesap bütünlüğü ve profil tamamlama süreçlerinde kullanmak",
+
+                s3_title: "3. Hukuki Dayanak ve Onay",
+                s3_p1: "Kodogram’a kayıt olan kullanıcılar, hesap oluşturma sırasında sunulan gizlilik politikası ve ilgili kullanım koşullarını açık şekilde kabul ederek verilerinin bu politika kapsamında işlenmesine onay vermiş olur.",
+                s3_p2: "Giriş yapan kullanıcılar, hizmeti kullanmaya devam ederek yürürlükteki gizlilik politikası ve kullanım koşullarına tabi olur. Gizlilik politikası veya veri işleme kapsamı önemli ölçüde değişirse kullanıcılardan yeniden onay istenebilir.",
+                s3_p3: "Sistem üzerinde gizlilik onayı durumu, onay tarihi ve sözleşme sürümü kayıt altına alınabilir.",
+
+                s4_title: "4. Verilerin Saklanması",
+                s4_p1: "Kullanıcı verileri başta Google Firebase servisleri olmak üzere, uygulamanın çalışması için kullanılan teknik altyapılarda saklanabilir ve işlenebilir. Bu kapsamda Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging ve ilgili Google altyapıları kullanılabilir.",
+                s4_p2: "Kodogram, yetkisiz erişimi, veri kaybını ve kötüye kullanımı azaltmak amacıyla makul teknik ve idari önlemler uygulamayı hedefler. Bununla birlikte hiçbir dijital sistem mutlak güvenlik garantisi sunmaz.",
+
+                s5_title: "5. Verilerin Paylaşılması",
+                s5_desc: "Kodogram, kişisel verileri aşağıdaki durumlar dışında üçüncü kişilere satmaz:",
+                s5_li1: "Hizmetin teknik olarak yürütülmesi için gerekli altyapı ve servis sağlayıcılarla",
+                s5_li2: "Yasal zorunluluk, resmi makam talebi veya hukuki yükümlülük halinde",
+                s5_li3: "Dolandırıcılık, güvenlik ihlali, spam, kötüye kullanım veya moderasyon incelemelerinde",
+                s5_li4: "Kullanıcının açık onayı bulunduğunda",
+
+                s6_title: "6. Veri Görünürlüğü ve Erişim",
+                s6_p1: "Kodogram içinde bazı profil bilgileri, içerikler ve topluluk verileri diğer kullanıcılar tarafından görülebilir. Buna kullanıcı adı, paylaşılan içerikler, forum başlıkları, yorumlar ve kullanıcının platform içinde görünür hale getirdiği diğer bilgiler dahil olabilir.",
+                s6_p2: "E-posta adresi, cihaz bilgileri, IP bilgisi, güvenlik kayıtları, bildirim belirteçleri ve benzeri hassas teknik veriler normal şartlarda kamuya açık değildir. Bu tür veriler yalnızca hesabın sahibi, yetkili sistem bileşenleri veya gerekli durumlarda yetkili yöneticiler tarafından erişilebilir olabilir.",
+
+                s7_title: "7. Yönetici Erişimi",
+                s7_p1: "Kodogram yönetim paneli üzerinden yetkili yöneticiler; kullanıcı hesabı, e-posta, ad soyad, ülke, cihaz bilgileri, IP bilgisi, paylaşım geçmişi, forum içerikleri, raporlar, destek talepleri, moderasyon kayıtları, ban geçmişi ve idari loglar gibi verilere erişebilir. Bu erişim yalnızca uygulama yönetimi, güvenlik, destek, kötüye kullanım önleme ve moderasyon amaçlarıyla sınırlıdır.",
+
+                s8_title: "8. Bildirimler",
+                s8_p1: "Kodogram, kullanıcı tercihlerine bağlı olarak uygulama içi veya cihaz bildirimi gönderebilir. Bu amaçla push bildirim belirteçleri, bildirim tercihleri ve bildirim teslimi için gerekli teknik veriler işlenebilir.",
+                s8_p2: "Kullanıcılar bildirim izinlerini cihaz ayarları veya uygulama ayarları üzerinden yönetebilir.",
+
+                s9_title: "9. Çocukların Gizliliği",
+                s9_p1: "Kodogram, yürürlükteki yerel mevzuata aykırı şekilde çocuklardan bilerek veri toplamayı hedeflemez. Gerekli görülen durumlarda yaş doğrulama, hesap kısıtlaması, içerik erişim sınırlamaları veya hesap incelemesi uygulanabilir.",
+                s9_p2: "Kullanıcı tarafından sağlanan doğum tarihi, yaş uygunluğunu değerlendirmek, platform güvenliğini desteklemek ve belirli hesap akışlarını doğrulamak amacıyla kullanılabilir.",
+
+                s10_title: "10. Kullanıcı Hakları",
+                s10_desc: "Kullanıcılar, yürürlükteki hukuka bağlı olarak aşağıdaki haklara sahip olabilir:",
+                s10_li1: "Hangi verilerin işlendiğini öğrenme",
+                s10_li2: "Eksik veya yanlış verilerin düzeltilmesini talep etme",
+                s10_li3: "Belirli koşullarda verilerin silinmesini isteme",
+                s10_li4: "Hesabın kapatılmasını ve ilişkili verilerin silinmesini talep etme",
+                s10_li5: "Belirli veri işleme faaliyetlerine itiraz etme veya bilgi talebinde bulunma",
+                s10_p2: "Hesabınızın ve ilişkili verilerinizin silinmesini talep etmek için aşağıdaki iletişim adresinden bizimle iletişime geçebilirsiniz.",
+
+                s11_title: "11. Veri Saklama Süresi",
+                s11_p1: "Veriler; hesabın aktif kaldığı süre boyunca veya hizmetin sunulması, güvenlik, yasal yükümlülükler, uyuşmazlık çözümü ve meşru idari gereklilikler için gerekli olduğu ölçüde saklanabilir.",
+                s11_p2: "Bazı kayıtlar; destek talepleri, güvenlik logları, moderasyon geçmişi, raporlar, ban kayıtları veya idari işlem geçmişi gibi nedenlerle hesap silinse dahi belirli bir süre daha saklanabilir.",
+
+                s12_title: "12. Gizlilik Politikasındaki Değişiklikler",
+                s12_p1: "Kodogram bu politikayı zaman zaman güncelleyebilir. Önemli değişiklikler uygulama içinde, ilgili ekranda veya gerekli görüldüğünde yeniden onay süreciyle kullanıcılara bildirilebilir.",
+
+                s13_title: "13. İletişim",
+                s13_p1: "Gizlilik politikası, veri işleme faaliyetleri, hesap silme talepleri veya kullanıcı verileriyle ilgili başvurularınız için bizimle şu e-posta adresi üzerinden iletişime geçebilirsiniz:",
+
+                s14_title: "14. Üçüncü Taraf Servisler",
+                s14_desc: "Kodogram, hizmetin sunulması sırasında aşağıdaki üçüncü taraf servislerden yararlanabilir:",
+                s14_li1: "<strong>Google Firebase Authentication</strong> - kullanıcı kimlik doğrulama ve oturum yönetimi",
+                s14_li2: "<strong>Google Cloud Firestore / Firebase Firestore</strong> - uygulama verilerinin saklanması",
+                s14_li3: "<strong>Firebase Cloud Messaging</strong> - cihaz bildirimlerinin iletilmesi",
+                s14_li4: "<strong>Firebase Cloud Functions</strong> - belirli sunucu tarafı otomasyon ve bildirim işlemleri",
+                s14_li5: "<strong>Apple Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde",
+                s14_li6: "<strong>Google Sign-In</strong> - kullanıcı hesabı ile oturum açma seçeneği sunulması halinde",
+                s14_li7: "<strong>ipify veya benzeri IP çözümleme servisi</strong> - genel IP adresinin elde edilmesi gerektiği durumlarda",
+                s14_p2: "Bu servisler kendi gizlilik politikalarına göre de veri işleyebilir. Kullanıcılar ilgili servislerin güncel politikalarını ayrıca incelemelidir.",
+
+                foot: "SS Development © 2026 Kodogram"
+            },
+
+            en: {
+                page_title: "Kodogram Privacy Policy",
+                badge: "Kodogram Privacy Policy",
+                hero_title: "Kodogram Privacy Policy",
+                hero_desc: "This Privacy Policy explains what data is collected from users of the Kodogram application, for what purposes it is processed, which third-party services are used to store it, with whom it may be shared, and what rights users have regarding their data.",
+                meta_update: "Last updated: March 22, 2026",
+                meta_version: "Version: 2026.03",
+
+                s1_title: "1. Data Collected",
+                s1_desc: "Kodogram may collect the following data in order to provide its services, ensure security, and maintain community functionality:",
+                s1_li1: "Email address",
+                s1_li2: "First and last name",
+                s1_li3: "Username",
+                s1_li4: "Date of birth",
+                s1_li5: "Account creation and last login dates",
+                s1_li6: "Authentication provider information (for example manual sign-up, Apple Sign-In, Google Sign-In)",
+                s1_li7: "Country and region information",
+                s1_li8: "Device identifier, device name, device model",
+                s1_li9: "Operating system name and version",
+                s1_li10: "IP address and connection-related technical information",
+                s1_li11: "Push notification token (FCM token), notification preferences, and related settings",
+                s1_li12: "In-app learning progress, streak information, quiz and lesson completion data",
+                s1_li13: "Forum content, shared code, comments, likes, and interaction records",
+                s1_li14: "User reports, support requests, and support communications",
+                s1_li15: "Moderation records, ban history, administrative action logs, and security logs",
+                s1_li16: "Follower / following relationships and related request records",
+                s1_li17: "Privacy consent status, consent date, and policy version information",
+
+                s2_title: "2. Purposes of Data Collection",
+                s2_desc: "Collected data may be used for the following purposes:",
+                s2_li1: "To carry out account creation, sign-in, and authentication processes",
+                s2_li2: "To manage user profiles, usernames, and account settings",
+                s2_li3: "To personalize the user experience and provide app functionality",
+                s2_li4: "To provide account security, fraud prevention, misuse detection, and abuse reduction",
+                s2_li5: "To operate forum, sharing, learning, and moderation systems",
+                s2_li6: "To track learning progress, achievements, and user activity",
+                s2_li7: "To send in-app notifications, device notifications, announcements, and service messages",
+                s2_li8: "To respond to support requests, review user reports, and protect community safety",
+                s2_li9: "To analyze technical issues, improve service quality, and enhance performance",
+                s2_li10: "To fulfill legal obligations, resolve disputes, and maintain administrative records",
+                s2_li11: "To use data such as date of birth for age suitability, account integrity, and profile completion processes",
+
+                s3_title: "3. Legal Basis and Consent",
+                s3_p1: "Users who register for Kodogram consent to the processing of their data under this policy by clearly accepting the privacy policy and related terms of use during account creation.",
+                s3_p2: "Users who sign in and continue to use the service are subject to the current privacy policy and terms of use. If the privacy policy or the scope of data processing changes significantly, users may be asked to provide consent again.",
+                s3_p3: "Privacy consent status, consent date, and policy version may be recorded within the system.",
+
+                s4_title: "4. Data Storage",
+                s4_p1: "User data may be stored and processed primarily through Google Firebase services and other technical infrastructure used to operate the application. This may include Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, and related Google infrastructure.",
+                s4_p2: "Kodogram aims to apply reasonable technical and administrative measures to reduce unauthorized access, data loss, and misuse. However, no digital system can guarantee absolute security.",
+
+                s5_title: "5. Data Sharing",
+                s5_desc: "Kodogram does not sell personal data to third parties except in the following cases:",
+                s5_li1: "With infrastructure and service providers necessary for the technical operation of the service",
+                s5_li2: "When required by law, official authority request, or legal obligation",
+                s5_li3: "In cases of fraud, security incidents, spam, abuse, or moderation review",
+                s5_li4: "When the user has given explicit consent",
+
+                s6_title: "6. Data Visibility and Access",
+                s6_p1: "Within Kodogram, some profile information, content, and community data may be visible to other users. This may include usernames, shared content, forum topics, comments, and other information the user makes visible on the platform.",
+                s6_p2: "Email addresses, device information, IP information, security records, notification tokens, and similar sensitive technical data are not public under normal conditions. Such data may only be accessed by the account owner, authorized system components, or authorized administrators when necessary.",
+
+                s7_title: "7. Administrator Access",
+                s7_p1: "Through the Kodogram admin panel, authorized administrators may access data such as user account information, email, full name, country, device information, IP information, sharing history, forum content, reports, support requests, moderation records, ban history, and administrative logs. This access is limited to app management, security, support, abuse prevention, and moderation purposes.",
+
+                s8_title: "8. Notifications",
+                s8_p1: "Kodogram may send in-app or device notifications depending on user preferences. For this purpose, push notification tokens, notification preferences, and technical data required for notification delivery may be processed.",
+                s8_p2: "Users may manage notification permissions through device settings or application settings.",
+
+                s9_title: "9. Children's Privacy",
+                s9_p1: "Kodogram does not knowingly aim to collect data from children in violation of applicable local laws. Where deemed necessary, age verification, account restrictions, content access limitations, or account review may be applied.",
+                s9_p2: "The date of birth provided by the user may be used to assess age suitability, support platform safety, and verify certain account flows.",
+
+                s10_title: "10. User Rights",
+                s10_desc: "Subject to applicable law, users may have the following rights:",
+                s10_li1: "To learn which data is being processed",
+                s10_li2: "To request correction of incomplete or inaccurate data",
+                s10_li3: "To request deletion of data under certain conditions",
+                s10_li4: "To request account closure and deletion of related data",
+                s10_li5: "To object to certain data processing activities or request information",
+                s10_p2: "To request deletion of your account and related data, you may contact us using the communication address below.",
+
+                s11_title: "11. Data Retention Period",
+                s11_p1: "Data may be retained for as long as the account remains active or to the extent necessary for service delivery, security, legal obligations, dispute resolution, and legitimate administrative requirements.",
+                s11_p2: "Some records may be retained for a certain period even after account deletion due to support requests, security logs, moderation history, reports, ban records, or administrative action history.",
+
+                s12_title: "12. Changes to This Privacy Policy",
+                s12_p1: "Kodogram may update this policy from time to time. Important changes may be communicated to users within the app, on the relevant page, or through a renewed consent process when necessary.",
+
+                s13_title: "13. Contact",
+                s13_p1: "For questions regarding the privacy policy, data processing activities, account deletion requests, or user data, you may contact us via the following email address:",
+
+                s14_title: "14. Third-Party Services",
+                s14_desc: "Kodogram may use the following third-party services while providing the service:",
+                s14_li1: "<strong>Google Firebase Authentication</strong> - user authentication and session management",
+                s14_li2: "<strong>Google Cloud Firestore / Firebase Firestore</strong> - storage of application data",
+                s14_li3: "<strong>Firebase Cloud Messaging</strong> - delivery of device notifications",
+                s14_li4: "<strong>Firebase Cloud Functions</strong> - certain server-side automation and notification operations",
+                s14_li5: "<strong>Apple Sign-In</strong> - if offered as a user sign-in option",
+                s14_li6: "<strong>Google Sign-In</strong> - if offered as a user sign-in option",
+                s14_li7: "<strong>ipify or similar IP resolution service</strong> - when obtaining a public IP address is necessary",
+                s14_p2: "These services may also process data in accordance with their own privacy policies. Users should also review the current policies of those services.",
+
+                foot: "SS Development © 2026 Kodogram"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem("kodogram_lang", lang);
+            document.documentElement.lang = lang;
+            document.title = translations[lang].page_title;
+
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll(".lang-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+            });
+        }
+
+        document.querySelectorAll(".lang-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                setLanguage(btn.getAttribute("data-lang"));
+            });
+        });
+
+        const savedLang = localStorage.getItem("kodogram_lang") || "tr";
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
